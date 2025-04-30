@@ -1,0 +1,4 @@
+Olá, mundo!
+Estamos usando o método writelines
+Este é um arquivo de texto.
+Estamos aprendendo Python.

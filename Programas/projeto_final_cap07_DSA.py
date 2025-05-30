@@ -37,12 +37,12 @@ def game():
         print(f"Tentativas restantes: {chances}")
         print("Letras erradas:", " ".join(letras_erradas))
         # Entrada do usuário
-        tentativa = input("Digite uma letra: ").lower()
+        tentativa = input(f"\nDigite uma letra: ").lower()
         
         # Verificar se a letra já foi tentada
-        if tentativa in palavras:
+        if tentativa in palavra:
             index = 0
-            for letra in palavras:
+            for letra in palavra:
                 if tentativa == letra:
                     letras_descobertas[index] = letra
                 index += 1
@@ -51,7 +51,7 @@ def game():
                 letras_erradas.append(tentativa)
         # Verificar se a palavra foi descoberta
         if '_' not in letras_descobertas:
-            print("Parabéns! Você adivinhou a palavra:", palavras)
+            print("Parabéns! Você adivinhou a palavra:", palavra)
             break
     # Verificar se o usuário perdeu                    
     if "_" in letras_descobertas:
@@ -60,13 +60,3 @@ def game():
 # Bloco main para executar o jogo
 if __name__ == "__main__":
     game()
-    while True:
-        jogar_novamente = input("Deseja jogar novamente? (s/n): ").lower()
-        if jogar_novamente == 's':
-            game()
-        elif jogar_novamente == 'n':
-            print("Obrigado por jogar! Até a próxima!")
-            break
-        else:
-            print("Opção inválida. Por favor, digite 's' ou 'n'.")
- 
